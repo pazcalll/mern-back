@@ -1,0 +1,25 @@
+###
+
+GET http://localhost:4000/goods
+
+###
+
+GET http://localhost:4000/goods?page=1&perPage=2
+
+###
+
+GET http://localhost:4000/goods/610d5264e0ed223920fc04b0
+
+###
+
+POST http://localhost:4000/goods
+Content-Type: application/json
+
+{
+    "name": "Shoes",
+    "goodsToChannel": "Outdoor"
+}
+
+###
+
+DELETE http://localhost:4000/goods/610c200bd222c0138c3d637b

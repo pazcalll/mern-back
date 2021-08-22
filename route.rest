@@ -16,8 +16,8 @@ POST http://localhost:4000/goods
 Content-Type: application/json
 
 {
-    "name": "Shoes",
-    "goodsToChannel": "Outdoor"
+    "name": "Router",
+    "goodsToChannel": "Electronic"
 }
 
 ###

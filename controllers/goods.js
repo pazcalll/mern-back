@@ -61,6 +61,38 @@ exports.patch = async (req, res) => {
     }
 }
 
+exports.put = async (req, res, next) => {
+    try{
+        // console.log(req.body)
+        const name = req.body.name
+        const goodsToChannel = req.body.goodsToChannel
+        await Goods.findById(req.params.id)
+            .then(post => {
+                if (!post) {
+                    const err = new Error('Item not found')
+                    err.errorStatus = 404
+                    throw err
+                }
+                post.name = name
+                post.goodsToChannel = goodsToChannel
+                
+                return post.save()
+            })
+            .then(result => {
+                res.status(200).json({
+                    message: 'Update Succeed',
+                    data: result
+                })
+            })
+            .catch(err => {
+                next(err);
+            })
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 exports.deleteData = async (req, res) => {
     try {
         await res.goods.remove()

@@ -14,6 +14,7 @@ router.post('/', goodsController.createData)
 
 // Update one
 router.patch('/:id', getGoods, goodsController.patch)
+router.put('/:id', getGoods, goodsController.put)
 
 // Delete one
 router.delete('/:id', getGoods, goodsController.deleteData)

@@ -2,12 +2,13 @@ const express = require('express')
 const router= express.Router()
 const Goods = require('../models/goods')
 const goodsController = require('../controllers/goods')
+const {auth} = require('./security/verifyToken')
 
 // Get all
 router.get('/', goodsController.getAll)
 
 // Get one
-router.get('/:id', getGoods, goodsController.getId)
+router.get('/:id', auth, getGoods, goodsController.getId)
 
 // Create one
 router.post('/', goodsController.createData)
@@ -17,7 +18,7 @@ router.patch('/:id', getGoods, goodsController.patch)
 router.put('/:id', getGoods, goodsController.put)
 
 // Delete one
-router.delete('/:id', getGoods, goodsController.deleteData)
+router.delete('/:id', auth, getGoods, goodsController.deleteData)
 
 
 // Middleware

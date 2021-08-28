@@ -68,11 +68,6 @@ exports.put = async (req, res, next) => {
         const goodsToChannel = req.body.goodsToChannel
         await Goods.findById(req.params.id)
             .then(post => {
-                if (!post) {
-                    const err = new Error('Item not found')
-                    err.errorStatus = 404
-                    throw err
-                }
                 post.name = name
                 post.goodsToChannel = goodsToChannel
                 

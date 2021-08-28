@@ -4,7 +4,7 @@ GET http://localhost:4000/goods
 
 ###
 
-GET http://localhost:4000/goods?page=1&perPage=2
+GET http://localhost:4000/goods?page=1&perPage=14
 
 ###
 
@@ -22,4 +22,24 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:4000/goods/610c200bd222c0138c3d637b
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+    "username": "yz",
+    "password": "121212"
+}
+
+###
+
+PUT http://localhost:4000/goods/610fa9ed6ded043f7029de00
+Content-Type: application/json
+
+{
+    "name": "Pencil",
+    "goodsToChannel": "Writing"
+}
+
+###
+
+DELETE http://localhost:4000/goods/610d5264e0ed223920fc04b0
